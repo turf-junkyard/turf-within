@@ -1,0 +1,35 @@
+{
+  "name": "turf-within",
+  "version": "0.1.0",
+  "description": "turf within module",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morganherlocker/turf-within.git"
+  },
+  "keywords": [
+    "geojson",
+    "within",
+    "point",
+    "polygon",
+    "featurecollection"
+  ],
+  "author": "morganherlocker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morganherlocker/turf-within/issues"
+  },
+  "homepage": "https://github.com/morganherlocker/turf-within",
+  "devDependencies": {
+    "tape": "^2.12.1",
+    "turf-point": "^0.1.0",
+    "turf-polygon": "^0.1.0"
+  },
+  "dependencies": {
+    "turf-featurecollection": "^0.1.0",
+    "turf-inside": "^0.1.1"
+  }
+}
