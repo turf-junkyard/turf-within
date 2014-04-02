@@ -4,7 +4,7 @@ var point = require('turf-point')
 var polygon = require('turf-polygon')
 var featureCollection = require('turf-featurecollection')
 
-test('featureCollection', function(t){
+test('within', function(t){
   t.plan(4)
 
   // test with a single point
