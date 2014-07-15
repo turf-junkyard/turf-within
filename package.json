@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/morganherlocker/turf-within",
   "devDependencies": {
-    "tape": "^2.12.1",
-    "turf-point": "^0.1.0",
-    "turf-polygon": "^0.1.0"
+    "tape": "^2.13.3",
+    "turf-point": "^0.1.1",
+    "turf-polygon": "^0.1.1"
   },
   "dependencies": {
     "turf-featurecollection": "^0.1.0",
-    "turf-inside": "^0.1.1"
+    "turf-inside": "^0.1.4"
   }
 }
