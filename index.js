@@ -1,15 +1,15 @@
-var inside = require('turf-inside')
-var featureCollection = require('turf-featurecollection')
+var inside = require('turf-inside');
+var featureCollection = require('turf-featurecollection');
 
 module.exports = function(ptFC, polyFC){
-  pointsWithin = featureCollection([])
+  pointsWithin = featureCollection([]);
   polyFC.features.forEach(function(poly){
     ptFC.features.forEach(function(pt){
-      var isInside = inside(pt, poly)
+      var isInside = inside(pt, poly);
       if(isInside){
-        pointsWithin.features.push(pt)
+        pointsWithin.features.push(pt);
       }
-    })
-  })
-  return pointsWithin
+    });
+  });
+  return pointsWithin;
 }
