@@ -23,10 +23,7 @@ global.ptFC = ptFC;
 var suite = new Benchmark.Suite('turf-within');
 suite
   .add('turf-within',function () {
-    global.within.before(global.ptFC, global.polyFC);
-  })
-  .add('turf-within.fast',function () {
-    global.within.fast(global.ptFC, global.polyFC);
+    global.within(global.ptFC, global.polyFC);
   })
   .on('cycle', function (event) {
     console.log(String(event.target));
