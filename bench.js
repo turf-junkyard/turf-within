@@ -16,10 +16,17 @@ var pt5 = point(19,7, {population: 200});
 var pt6 = point(100,7, {population: 200});
 var ptFC = featureCollection([pt1, pt2, pt3, pt4, pt5, pt6]);
 
+global.within = within;
+global.polyFC = polyFC;
+global.ptFC = ptFC;
+
 var suite = new Benchmark.Suite('turf-within');
 suite
   .add('turf-within',function () {
-    within(ptFC, polyFC);
+    global.within.before(global.ptFC, global.polyFC);
+  })
+  .add('turf-within.fast',function () {
+    global.within.fast(global.ptFC, global.polyFC);
   })
   .on('cycle', function (event) {
     console.log(String(event.target));
