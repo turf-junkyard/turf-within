@@ -2,7 +2,7 @@ turf-within
 ===========
 [![Build Status](https://travis-ci.org/Turfjs/turf-within.svg)](https://travis-ci.org/Turfjs/turf-within)
 
-Returns a feature collection of points representing all points that fall withing a collection of polygons.
+Returns a feature collection of points representing all points that fall within a collection of polygons.
 
 ###Install
 
