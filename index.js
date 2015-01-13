@@ -2,7 +2,7 @@ var inside = require('turf-inside');
 var featureCollection = require('turf-featurecollection');
 
 /**
- * Returns a feature collection of points representing all points that fall
+ * Returns a FeatureCollection of points representing all points that fall
  * within a collection of polygons.
  *
  * @module turf/within
@@ -11,17 +11,26 @@ var featureCollection = require('turf-featurecollection');
  * @return {FeatureCollection} A collection of all points that land
  * within at least one polygon.
  * @example
- * var poly = turf.polygon([[[10,0],[20,10],[20,0],[10,0]]]);
- * var polyFC = turf.featurecollection([poly]);
- * var pt1 = turf.point(1,1);
- * var pt2 = turf.point(1,3);
- * var pt3 = turf.point(14,2);
- * var pt4 = turf.point(13,1);
- * var pt5 = turf.point(19,7);
- * var ptFC = turf.featurecollection([pt1, pt2, pt3, pt4, pt5]);
- * var ptsWithin = turf.within(ptFC, polyFC);
- * //=ptFC
- * //=polyFC
+ * var searchWithin = turf.featurecollection([
+ *   turf.polygon([
+ *     [[-46.653,-23.543],
+ *      [-46.634,-23.5346],
+ *      [-46.613,-23.543],
+ *      [-46.614,-23.559],
+ *      [-46.631,-23.567],
+ *      [-46.653,-23.560],
+ *      [-46.653,-23.543]]
+ *   ])
+ * ]);
+ * var points = turf.featurecollection([
+ *   turf.point([-46.6318, -23.5523]),
+ *   turf.point([-46.6246, -23.5325]),
+ *   turf.point([-46.6062, -23.5513]),
+ *   turf.point([-46.663, -23.554]),
+ *   turf.point([-46.643, -23.557])]);
+ * var ptsWithin = turf.within(points, searchWithin);
+ * //=points
+ * //=searchWithin
  * //=ptsWithin
  */
 module.exports = function(ptFC, polyFC){
