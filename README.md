@@ -1,47 +1,61 @@
-turf-within
-===========
-[![Build Status](https://travis-ci.org/Turfjs/turf-within.svg)](https://travis-ci.org/Turfjs/turf-within)
+# turf-within
 
-Returns a feature collection of points representing all points that fall within a collection of polygons.
+[![build status](https://secure.travis-ci.org/Turfjs/turf-within.png)](http://travis-ci.org/Turfjs/turf-within)
 
-###Install
+turf within module
+
+
+### `turf.within(points, polygons)`
+
+Returns a FeatureCollection of points representing all points that fall
+within a collection of polygons.
+
+
+### Parameters
+
+| parameter  | type              | description |
+| ---------- | ----------------- | ----------- |
+| `points`   | FeatureCollection |             |
+| `polygons` | FeatureCollection |             |
+
+
+### Example
+
+```js
+var searchWithin = turf.featurecollection([
+  turf.polygon([
+    [[-46.653,-23.543],
+     [-46.634,-23.5346],
+     [-46.613,-23.543],
+     [-46.614,-23.559],
+     [-46.631,-23.567],
+     [-46.653,-23.560],
+     [-46.653,-23.543]]
+  ])
+]);
+var points = turf.featurecollection([
+  turf.point([-46.6318, -23.5523]),
+  turf.point([-46.6246, -23.5325]),
+  turf.point([-46.6062, -23.5513]),
+  turf.point([-46.663, -23.554]),
+  turf.point([-46.643, -23.557])]);
+var ptsWithin = turf.within(points, searchWithin);
+//=points
+//=searchWithin
+//=ptsWithin
+```
+
+## Installation
+
+Requires [nodejs](http://nodejs.org/).
 
 ```sh
-npm install turf-within
+$ npm install turf-within
 ```
 
-###Parameters
+## Tests
 
-|name|description|
-|---|---|
-|points|A FeatureCollection of Point Features|
-|polygons|A FeatureCollection of Polygon Features|
-
-###Usage
-
-```js
-within(points, polygons)
+```sh
+$ npm test
 ```
 
-###Example
-
-```js
-var within = require('turf-within')
-var point = require('turf-point')
-var polygon = require('turf-polygon')
-var featurecollection = require('turf-featurecollection')
-
-
-var poly = polygon([[[10,0],[20,10],[20,20], [20,0]]])
-var polyFC = featurecollection([poly])
-var pt1 = point(1,1)
-var pt2 = point(1,3)
-var pt3 = point(14,2)
-var pt4 = point(13,1)
-var pt5 = point(19,7)
-var ptFC = featurecollection([pt1, pt2, pt3, pt4, pt5])
-
-var ptsWithin = within(ptFC, polyFC)
-
-console.log(ptsWithin) // feature collection with 3 pts
-```
