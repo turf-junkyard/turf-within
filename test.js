@@ -8,7 +8,7 @@ test('within', function(t){
   t.plan(4);
 
   // test with a single point
-  var poly = polygon([[[0,0], [0,100], [100,100], [100,0]]]);
+  var poly = polygon([[[0,0], [0,100], [100,100], [100,0],[0,0]]]);
   var pt = point([50, 50]);
   var polyFC = featureCollection([poly]);
   var ptFC = featureCollection([pt]);
@@ -19,8 +19,8 @@ test('within', function(t){
   t.equal(counted.features.length, 1, '1 point in 1 polygon');
 
   // test with multiple points and multiple polygons
-  var poly1 = polygon([[[0,0],[10,0],[10,10],[0,10]]]);
-  var poly2 = polygon([[[10,0],[20,10],[20,20], [20,0]]]);
+  var poly1 = polygon([[[0,0],[10,0],[10,10],[0,10],[0,0]]]);
+  var poly2 = polygon([[[10,0],[20,10],[20,20], [20,0],[10,0]]]);
   var polyFC = featureCollection([poly1, poly2]);
   var pt1 = point([1,1], {population: 500});
   var pt2 = point([1,3], {population: 400});
