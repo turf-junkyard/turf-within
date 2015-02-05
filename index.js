@@ -5,6 +5,7 @@ var featureCollection = require('turf-featurecollection');
  * Takes a {@link FeatureCollection} of {@link Point} features and a FeatureCollection of {@link Polygon} features and returns a FeatureCollection of Point features representing all points that fall within a collection of polygons.
  *
  * @module turf/within
+ * @category joins
  * @param {FeatureCollection} points a FeatureCollection of {@link Point} features
  * @param {FeatureCollection} polygons a FeatureCollection of {@link Polygon} features
  * @return {FeatureCollection} a collection of all points that land
