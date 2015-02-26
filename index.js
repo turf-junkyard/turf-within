@@ -2,14 +2,13 @@ var inside = require('turf-inside');
 var featureCollection = require('turf-featurecollection');
 
 /**
- * Takes a {@link FeatureCollection} of {@link Point} features and a FeatureCollection of {@link Polygon} features and returns a FeatureCollection of Point features representing all points that fall within a collection of polygons.
+ * Takes a set of points and a set of polygons and returns the points that fall within the polygons.
  *
  * @module turf/within
  * @category joins
- * @param {FeatureCollection} points a FeatureCollection of {@link Point} features
- * @param {FeatureCollection} polygons a FeatureCollection of {@link Polygon} features
- * @return {FeatureCollection} a collection of all points that land
- * within at least one polygon
+ * @param {FeatureCollection<Point>} points input points
+ * @param {FeatureCollection<Polygon>} polygons input polygons
+ * @return {FeatureCollection<Point>} points that land within at least one polygon
  * @example
  * var searchWithin = {
  *   "type": "FeatureCollection",
